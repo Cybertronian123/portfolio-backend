@@ -7,7 +7,7 @@ authors = [
 ]
 license = {text = "MIT"}
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.12,<4.0"
 dependencies = [
     "django (>=5.1.5,<6.0.0)",
     "django-rest-framework (>=0.1.0,<0.2.0)",
