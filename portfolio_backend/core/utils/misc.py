@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import yaml
 
 
@@ -15,8 +17,7 @@ def yaml_coerce(value):
     # Return the original value if it's not a string
     # Convert string values to Python dictionaries
 
-
     if isinstance(value, str):
         return yaml.load(f'dummy: {value}', Loader=yaml.SafeLoader)['dummy']
-    
+
     return value

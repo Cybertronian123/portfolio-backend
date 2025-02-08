@@ -1,3 +1,6 @@
+from __future__ import annotations
+
+
 def deep_update(base_dict, update_dict):
     """
     Recursively update a dictionary with another dictionary.

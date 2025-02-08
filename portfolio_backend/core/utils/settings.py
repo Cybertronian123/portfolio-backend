@@ -1,5 +1,9 @@
+from __future__ import annotations
+
 import os
+
 from .misc import yaml_coerce
+
 
 def get_settings_from_environment(prefix):
     """
@@ -22,9 +26,9 @@ def get_settings_from_environment(prefix):
             'DB_PORT': '5432'
         }
     """
-    
 
-    
     prefix_len = len(prefix)
-    return {key[prefix_len:]: yaml_coerce(value) for key, value in os.environ.items() if key.startswith(prefix)}
-    
+    return {
+        key[prefix_len:]: yaml_coerce(value)
+        for key, value in os.environ.items() if key.startswith(prefix)
+    }

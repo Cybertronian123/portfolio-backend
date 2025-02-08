@@ -25,7 +25,3 @@ superuser:
 
 .PHONY: update
 update: install migrations migrate ;
-	
-
-
-
