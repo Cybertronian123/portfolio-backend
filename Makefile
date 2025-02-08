@@ -3,6 +3,17 @@ install:
 	@echo "Installing dependencies..."
 	poetry install
 
+
+.PHONY: install-pre-commit
+install-pre-commit:
+	@echo "Installing pre-commit..."
+	poetry run pre-commit uninstall; poetry run pre-commit install
+
+.PHONY: lint
+lint:
+	@echo "Linting..."
+	poetry run pre-commit run --all-files
+
 .PHONY: run-server
 run-server:
 	@echo "Running server..."
@@ -24,4 +35,4 @@ superuser:
 	poetry run python -m portfolio_backend.manage createsuperuser
 
 .PHONY: update
-update: install migrations migrate ;
+update: install migrations migrate install-pre-commit;
