@@ -14,3 +14,4 @@ per-file-ignores =
     portfolio_backend/project/settings/docker.py:F821
     portfolio_backend/project/settings/envvars.py:F821
     portfolio_backend/core/utils/collections.py:A005
+    portfolio_backend/project/settings/logging.py:A005

@@ -25,6 +25,7 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^4.1.0"
 types-pyyaml = "^6.0.12.20241230"
+colorlog = "^6.9.0"
 
 [tool.isort]
 multi_line_output = 5

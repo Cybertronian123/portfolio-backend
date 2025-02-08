@@ -40,5 +40,5 @@ Thumbs.db
 poetry.lock
 
 
-#Local
-local/*.*
+# Local settings
+/local/settings.dev.py
