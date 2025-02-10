@@ -45,3 +45,6 @@ poetry.lock
 
 #Assets
 /assets/*/*.*
+
+#MYPY Cache
+.mypy_cache/
