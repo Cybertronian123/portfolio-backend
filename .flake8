@@ -10,9 +10,8 @@ max-line-length = 119
 multiline-quotes = double
 per-file-ignores =
     portfolio_backend/project/settings/templates/settings.dev.py:F821
-    portfolio_backend/project/settings/base.py:F821, A001
+    portfolio_backend/project/settings/base.py:F821
     portfolio_backend/project/settings/docker.py:F821
     portfolio_backend/project/settings/envvars.py:F821
     portfolio_backend/core/utils/collections.py:A005
     portfolio_backend/project/settings/logging.py:A005
-    portfolio_backend/project/settings/base.py:A001
