@@ -9,8 +9,7 @@ DEBUG = False
 ALLOWED_HOSTS: List[str] = []
 
 # Application definition
-dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-print(dir)
+
 INSTALLED_APPS = [
     'django.contrib.admin', 'django.contrib.auth',
     'django.contrib.contenttypes', 'django.contrib.sessions',
