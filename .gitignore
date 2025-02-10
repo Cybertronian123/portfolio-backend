@@ -44,4 +44,4 @@ poetry.lock
 /local/settings.dev.py
 
 #Assets
-/assets
+/assets/*/*.*
