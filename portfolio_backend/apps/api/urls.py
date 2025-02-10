@@ -2,6 +2,16 @@ from __future__ import annotations
 
 from django.urls import path
 
+from .views.comments import CommentCreateView
+from .views.comments import CommentDeleteView
+from .views.comments import CommentDetailView
+from .views.comments import CommentListView
+from .views.comments import CommentUpdateView
+from .views.posts import PostCreateView
+from .views.posts import PostDeleteView
+from .views.posts import PostDetailView
+from .views.posts import PostListView
+from .views.posts import PostUpdateView
 from .views.projects import ProjectCreateView
 from .views.projects import ProjectDeleteView
 from .views.projects import ProjectDetailView
@@ -39,4 +49,24 @@ urlpatterns = [
     path('project/<int:pk>/delete',
          ProjectDeleteView.as_view(),
          name='project-delete'),
+
+    # Urls for Post model
+    path('post/create', PostCreateView.as_view(), name='post'),
+    path('post/', PostListView.as_view(), name='post-list'),
+    path('post/<int:pk>/', PostDetailView.as_view(), name='post-detail'),
+    path('post/<int:pk>/update', PostUpdateView.as_view(), name='post-update'),
+    path('post/<int:pk>/delete', PostDeleteView.as_view(), name='post-delete'),
+
+    # Urls for Comment model
+    path('comment/create', CommentCreateView.as_view(), name='comment'),
+    path('comment/', CommentListView.as_view(), name='comment-list'),
+    path('comment/<int:pk>/',
+         CommentDetailView.as_view(),
+         name='comment-detail'),
+    path('comment/<int:pk>/update',
+         CommentUpdateView.as_view(),
+         name='comment-update'),
+    path('comment/<int:pk>/delete',
+         CommentDeleteView.as_view(),
+         name='comment-delete'),
 ]
