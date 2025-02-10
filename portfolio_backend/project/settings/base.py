@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 from typing import List
 
 SECRET_KEY = NotImplemented
@@ -8,14 +9,13 @@ DEBUG = False
 ALLOWED_HOSTS: List[str] = []
 
 # Application definition
-
+dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+print(dir)
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.admin', 'django.contrib.auth',
+    'django.contrib.contenttypes', 'django.contrib.sessions',
+    'django.contrib.messages', 'django.contrib.staticfiles', 'rest_framework',
+    'portfolio_backend.apps.api'
 ]
 
 MIDDLEWARE = [
@@ -53,8 +53,12 @@ WSGI_APPLICATION = 'portfolio_backend.project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': f'{BASE_DIR}db.sqlite3',  # type: ignore
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'portfolio_db',
+        'USER': 'portfolio_user',
+        'PASSWORD': 'portfolio_password',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 

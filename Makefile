@@ -34,5 +34,10 @@ superuser:
 	@echo "Creating super user..."
 	poetry run python -m portfolio_backend.manage createsuperuser
 
+.PHONY: up-dependencies-only
+up-dependencies-only:
+	test -f .env || touch .env
+	docker compose -f docker-compose.dev.yml up --force-recreate db
+
 .PHONY: update
 update: install migrations migrate install-pre-commit;
